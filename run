@@ -1,0 +1,1 @@
+sudo PYTHONPATH=. ./bin/ryu-manager --observe-links ryu/app/mySwitch.py
