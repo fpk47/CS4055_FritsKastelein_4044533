@@ -100,6 +100,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         self.monitor_thread = hub.spawn(self._monitor)
         self.mac_to_port = {}
         self.switches = []
+        self.printAll = False
         self.switches_id = []
         self.numberOfSwitches = 0
         self.flows = []
@@ -310,7 +311,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         return
 
     def applyFlowAction( self, i_flow_action ):
-        if False:
+        if self.printAll:
             print "---------applyFlowAction---------"
             print "    add: " + repr( i_flow_action.isAddMode() )
             print "    rem: " + repr( i_flow_action.isDeleteMode())
